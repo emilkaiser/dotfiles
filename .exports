@@ -1,5 +1,12 @@
-# Make vim the default editor
-export EDITOR="vim"
+# Make sublime text 2 or textmate the default editor
+if [ -f /usr/local/bin/subl ]; then
+    export EDITOR='subl -w'
+elif [ -f /usr/local/bin/mate ]; then
+    export EDITOR='mate'
+    export GIT_EDITOR='mate -wl1'
+else
+	export EDITOR="nano"
+fi
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 # Highlight section titles in manual pages
@@ -9,5 +16,6 @@ export LESS_TERMCAP_md="$ORANGE"
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
-# Make some commands not show up in history
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+
+# Time zone
+export TZ='Europe/Stockholm'
