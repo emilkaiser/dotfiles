@@ -90,7 +90,7 @@ defaults write com.apple.BezelServices kDim -bool true
 defaults write com.apple.BezelServices kDimTime -int 300
 
 # Set language and text formats
-defaults write NSGlobalDomain AppleLanguages -array "sv" "nl"
+defaults write NSGlobalDomain AppleLanguages -array "sv" "SE"
 defaults write NSGlobalDomain AppleLocale -string "sv_SE@currency=SEK"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
