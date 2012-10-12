@@ -1,2 +1,24 @@
 # Disable the startup message
 startup_message off
+
+# Set the scrollback buffer
+defscrollback 5000
+
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+
+# detach on hangup - if my dial-up session fails, screen will simply
+# detach and let me re re-attach later
+autodetach on
+
+# Default screens
+screen -t shell1 0
+screen -t apachectl	1
+screen -t test 2
+screen -t error_log	3 tail -f /Users/emilkaiser/Sites/logs/booli.se-error_log
+screen -t www1 4
+screen -t www2 5
+screen -t www3 6
+screen -t sql2 7
+screen -t chloe 8 ssh chloe
+screen -t palmer 9 ssh palmer
