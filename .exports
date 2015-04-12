@@ -1,14 +1,15 @@
 # Make sublime text 2 or textmate the default editor
 if [ -f /usr/local/bin/subl ]; then
-    export EDITOR='subl -w'
-elif [ -f /usr/local/bin/mate ]; then
-    export EDITOR='mate'
-    export GIT_EDITOR='mate -wl1'
+    export EDITOR='subl -n -w'
+    export GIT_EDITOR='subl -n -w'
+    export VISUAL='subl -n -w'
 else
 	export EDITOR="nano"
 fi
+
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
+
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="$ORANGE"
 
@@ -19,3 +20,22 @@ export HISTCONTROL=ignoredups
 
 # Time zone
 export TZ='Europe/Stockholm'
+
+# Prefer US English and use UTF-8
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US"
+
+# node stuff
+export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
+
+# ruby need to find some mysql lib
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+export GOPATH=~/Sites/booli/go
+export PATH=$GOPATH/bin:$PATH
+
+export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+
+# add npm to path
+export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"

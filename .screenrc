@@ -16,9 +16,7 @@ screen -t shell1 0
 screen -t apachectl	1
 screen -t test 2
 screen -t error_log	3 tail -f /Users/emilkaiser/Sites/logs/booli.se-error_log
-screen -t www1 4
-screen -t www2 5
-screen -t www3 6
-screen -t sql2 7
-screen -t chloe 8 ssh chloe
-screen -t palmer 9 ssh palmer
+screen -t log	3 tail -f /Users/emilkaiser/Sites/booli/booli.se/logs/log.txt
+
+bindkey "^[Od" prev  # change window with ctrl-left
+bindkey "^[Oc" next  # change window with ctrl-right

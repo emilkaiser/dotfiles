@@ -25,10 +25,6 @@ for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null
 done
 
-# Prefer US English and use UTF-8
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US"
-
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
@@ -42,5 +38,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
-# node stuff
-export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# shellshock, install bash from brew, moved bash and sh and creates symlinks to brew kegs
+# http://security.stackexchange.com/questions/68202/how-to-patch-bash-on-osx-in-wake-of-shellshock

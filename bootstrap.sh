@@ -15,3 +15,5 @@ else
 fi
 unset doIt
 source ~/.bash_profile
+
+# run with source bootstrap.sh
