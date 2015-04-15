@@ -39,6 +39,3 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# shellshock, install bash from brew, moved bash and sh and creates symlinks to brew kegs
-# http://security.stackexchange.com/questions/68202/how-to-patch-bash-on-osx-in-wake-of-shellshock
